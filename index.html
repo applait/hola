@@ -37,11 +37,8 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                    <li class="page-scroll request-app-link">
+                        <a href="#request">Request an app</a>
                     </li>
                 </ul>
             </div>
@@ -114,6 +111,32 @@
                         <li><a href="https://facebook.com/applait" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="request" class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1>Request a Firefox OS app</h1>
+                    <p>Put a request here with your current webapp URL and we will get in touch.
+                    <form class="form-inline" method="POST" action="http://request-applait.rhcloud.com" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="item-webapp-url">Your webapp URL</label>
+                            <input type="text" class="form-control input-lg" id="item-webapp-url"
+                                placeholder="Webapp URL">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="item-email">Your email address</label>
+                            <input type="text" class="form-control input-lg" id="item-email"
+                                placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <button id="request-submit" type="submit" class="btn btn-primary btn-lg">Request app</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

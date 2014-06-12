@@ -66,7 +66,6 @@ a:focus {
 .navbar {
     opacity: 0;
     margin-bottom: 0;
-    border-bottom: 1px solid #4D4E53;
     background-color: #333333;
     -webkit-transition: opacity .3s ease-in;
     -moz-transition: opacity .3s ease-in;
@@ -117,6 +116,9 @@ a:focus {
     opacity: 1;
 }
 
+.navbar .request-app-link {
+    background-color: #CD6723;
+}
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -317,6 +319,20 @@ a:focus {
     background-color: #FF9500;
 }
 
+.btn-primary {
+    border: none;
+    outline: 0;
+    color: #000;
+    background-color: #FF9500;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border: none;
+    color: #FF9500;
+    background-color: #333;
+}
+
 .btn-huge {
     padding: 25px;
     font-size: 26px;
@@ -378,4 +394,8 @@ body {
 
 #contact {
     background-color: #3D3E42;
+}
+
+#request {
+    background: #CD6723;
 }
