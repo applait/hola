@@ -64,9 +64,13 @@ a:focus {
 }
 
 .navbar {
+    opacity: 0;
     margin-bottom: 0;
     border-bottom: 1px solid #4D4E53;
     background-color: #333333;
+    -webkit-transition: opacity .3s ease-in;
+    -moz-transition: opacity .3s ease-in;
+    transition: opacity .3s ease-in;
 }
 
 .navbar-brand {
@@ -109,9 +113,12 @@ a:focus {
     outline: 0;
 }
 
+.top-nav-collapse {
+    opacity: 1;
+}
+
 @media(min-width:767px) {
     .navbar {
-        opacity: 0;
         padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
@@ -123,7 +130,6 @@ a:focus {
 
     .top-nav-collapse {
         padding: 0;
-        opacity: 1;
         background-color: #333333;
     }
 
@@ -251,6 +257,7 @@ a:focus {
 
 .content-section {
     padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .download-section {
@@ -274,6 +281,7 @@ a:focus {
 @media(min-width:767px) {
     .content-section {
         padding-top: 250px;
+        padding-bottom: 250px;
     }
 
     .download-section {
