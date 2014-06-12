@@ -67,9 +67,11 @@ a:focus {
     opacity: 0;
     margin-bottom: 0;
     background-color: #333333;
-    -webkit-transition: opacity .3s ease-in;
-    -moz-transition: opacity .3s ease-in;
-    transition: opacity .3s ease-in;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
 }
 
 .navbar ul.list-inline {
@@ -131,18 +133,12 @@ a:focus {
 }
 @media(min-width:767px) {
     .navbar {
-        padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background: 0 0;
-        -webkit-transition: all .5s ease-in, padding .1s ease-in, border .1s ease-in;
-        -moz-transition: all .5s ease-in, padding .1s ease-in, border .1s ease-in;
-        transition: all .5s ease-in, padding .1s ease-in, border .1s ease-in;
     }
 
     .top-nav-collapse {
         padding: 0;
-        background-color: #333333;
     }
 
     .navbar-custom.top-nav-collapse {
@@ -409,4 +405,8 @@ body {
 
 #request {
     background: #CD6723;
+}
+
+.show {
+    opacity: 1;
 }

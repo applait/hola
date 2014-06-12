@@ -1,9 +1,9 @@
 // Prepare the collapse nav function
 var collapsenav = function() {
     if ($(".navbar").offset().top > $('.intro').outerHeight() - 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
+        $(".navbar-fixed-top").addClass("show");
     } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $(".navbar-fixed-top").removeClass("show");
     }
 };
 
