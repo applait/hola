@@ -1,3 +1,6 @@
+// Configuration parapmeters
+var endPoint = "http://localhost:1337/";
+
 // Prepare the collapse nav function
 var collapsenav = function() {
     if ($(".navbar").offset().top > $('.intro').outerHeight() - 50) {
@@ -22,4 +25,22 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+});
+
+// Handle app-request with AJAX
+$("#request-submit").click( function (event) {
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: endPoint,
+        data: {
+            email: $("#item-email").val(),
+            url: $("#item-url").val()
+        }
+    }).done(function (data) {
+        alert("Submitted!");
+    }).fail(function (error) {
+        alert(JSON.stringify(error, null, "  "));
+    });
+    return false;
 });
