@@ -109,7 +109,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h1>Request a Firefox OS app</h1>
                     <p>Put a request here with your current webapp URL and we will get in touch.
-                    <form class="form-inline" role="form">
+                    <form id="request-form" class="form-inline" role="form">
                         <div class="form-group">
                             <label class="sr-only" for="item-webapp-url">Your webapp URL</label>
                             <input type="text" class="form-control input-lg" id="item-url"
@@ -124,6 +124,9 @@
                             <button id="request-submit" type="submit" class="btn btn-primary btn-lg">Request App</button>
                         </div>
                     </form>
+                    <div id="submission-toast" class="alert alert-warning">
+                        Got it... we'll get back to you ASAP. Do you wanna <b id="request-again">request another</b> app?
+                    </div>
                 </div>
             </div>
         </div>

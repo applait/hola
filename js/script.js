@@ -38,9 +38,16 @@ $("#request-submit").click( function (event) {
             url: $("#item-url").val()
         }
     }).done(function (data) {
-        alert("Submitted!");
+        $("#submission-toast").fadeIn();
+        $("#request-form").hide();
     }).fail(function (error) {
-        alert(JSON.stringify(error, null, "  "));
+        console.log(JSON.stringify(error, null, "  "));
     });
     return false;
+});
+
+// Reenable form, for resubmission
+$("#request-again").click( function (event) {
+    $("#submission-toast").hide();
+    $("#request-form").fadeIn();
 });
