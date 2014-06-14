@@ -9,28 +9,18 @@
     <meta name="description" content="Get your own Firefox OS apps starting $100">
 
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Fonts -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:300,300italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:300,300italic|Montserrat|Alegreya' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="row page-scroll">
-                <a class="navbar-brand brand-wordmark" href="#page-top">
-                    <span class="light">Applait</span>
-                </a>
-                <ul class="pull-right list-inline">
-                    <li>
-                        <a class="request-app-link navbar-button" href="#request">Request an app</a>
-                    </li>
-                </ul>
-            </div>
+            <a id="request-app-link" class="navbar-button" href="#request">Request an app</a>
+            <a class="navbar-brand" href="#page-top">applait</a>
         </div>
     </nav>
 
@@ -39,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading brand-wordmark"><span class="light">Applait</span></h1>
+                        <h1 id="brand-wordmark">applait</h1>
                         <p class="intro-text">Firefox OS apps, baked and served hot.</p>
                         <div class="page-scroll">
                             <a href="#offer" class="btn btn-circle">
@@ -90,14 +80,19 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Get in touch</h2>
                     <p>Drop us an email at <a href="mailto:ask@applait.org">ask@applait.org</a></p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li><a href="https://twitter.com/applait" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li><a href="https://github.com/applait" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li><a href="https://facebook.com/applait" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a href="https://twitter.com/applait" class="btn btn-default btn-lg">
+                                <i class="fa fa-twitter fa-fw"></i>
+                            </a>
+                            <a href="https://github.com/applait" class="btn btn-default btn-lg">
+                                <i class="fa fa-github fa-fw"></i>
+                            </a>
+                            <a href="https://facebook.com/applait" class="btn btn-default btn-lg">
+                                <i class="fa fa-facebook fa-fw"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

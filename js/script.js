@@ -10,9 +10,6 @@ var collapsenav = function() {
     }
 };
 
-//Collapse navigation on page load depending on position of page
-$(window).load(collapsenav);
-
 //jQuery to collapse the navbar on scroll
 $(window).scroll(collapsenav);
 
