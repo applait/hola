@@ -48,6 +48,7 @@ a {
 /* 1. ID & Class */
 .navbar {
     opacity: 0;
+    border: none;
     margin-bottom: 0;
     background-color: #333333;
     padding-top: 0;
@@ -147,13 +148,14 @@ a {
 
 .show { opacity: 1; }
 
+#failure-toast,
 #submission-toast {
     color: #6a4d2b;
     display: none;
     font-size: 1.5rem;
 }
 
-#request-again {
+.request-again {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -169,6 +171,16 @@ a {
     text-shadow: none;
     background: #fcfcfc;
     background: rgba(255,255,255,.2);
+}
+
+input::-moz-selection {
+    color: #eee;
+    background: #444;
+}
+
+input::selection {
+    color: #eee;
+    background: #444;
 }
 
 a:hover,

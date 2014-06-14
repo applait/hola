@@ -25,14 +25,13 @@ $(function() {
 });
 
 // Handle app-request with AJAX
-$("#request-submit").click( function (event) {
-    event.preventDefault();
+var youGoBoy = function (email, url) {
     $.ajax({
         type: "POST",
         url: endPoint,
         data: {
-            email: $("#item-email").val(),
-            url: $("#item-url").val()
+            email: email,
+            url: url
         }
     }).done(function (data) {
         $("#submission-toast").fadeIn();
@@ -40,11 +39,24 @@ $("#request-submit").click( function (event) {
     }).fail(function (error) {
         console.log(JSON.stringify(error, null, "  "));
     });
+};
+
+var ohNoes = function () {
+    $("#failure-toast").fadeIn();
+    $("#request-form").hide();
+}
+
+$("#request-submit").click( function (event) {
+    event.preventDefault();
+    var email = $("#item-email").val();
+    var url = $("#item-url").val();
+    (email && url) ? youGoBoy(email, url) : ohNoes();
     return false;
 });
 
 // Reenable form, for resubmission
-$("#request-again").click( function (event) {
-    $("#submission-toast").hide();
+$(".request-again").click( function (event) {
+    $(this).parent().hide();
     $("#request-form").fadeIn();
+    $("#item-url").select();
 });
