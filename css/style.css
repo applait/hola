@@ -45,6 +45,17 @@ a {
     transition: all .2s ease-in-out;
 }
 
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 20px;
+    outline: none;
+    border: solid #804000;
+    border-width: 1px 1px 4px;
+}
+
+input[type="text"] { color: #666; }
+
 /* 1. ID & Class */
 .navbar {
     opacity: 0;
@@ -53,8 +64,6 @@ a {
     background-color: #333333;
     padding-top: 0;
     padding-bottom: 0;
-    -webkit-transition: opacity .3s ease-out;
-    transition: opacity .3s ease-out;
 }
 
 .navbar a { color: #fff; }
@@ -65,8 +74,6 @@ a {
     padding: 15px;
     display: block;
     background-color: #CD6723;
-    -webkit-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
 }
 
 .navbar-brand,
@@ -101,8 +108,6 @@ a {
     border: 2px solid #fff;
     border-radius: 50%;
     font-size: 3em;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
 }
 
 .btn-circle:hover i.animated {
@@ -127,26 +132,24 @@ a {
     min-height: 100%;
 }
 
-.btn-default {
-    color: #FF9500;
-    border: 1px solid #FF9500;
-    background-color: transparent;
-}
-
-.btn-default:hover,
-.btn-default:focus {
-    outline: 0;
-    color: #000;
-    border: 1px solid #FF9500;
-    background-color: #FF9500;
-}
-
 #offer { background-color: #5A5C63; }
 #about { background-color: #4D4E53; }
 #contact { background-color: #3D3E42; }
 #request { background: #CD6723; }
 
 .show { opacity: 1; }
+.crossfade {
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.not-form-group { width: 100%; }
+
+#request-submit {
+    color: #804000;
+    padding: 8px 16px;
+    background-color: #FF9500;
+}
 
 #failure-toast,
 #submission-toast {
@@ -204,6 +207,13 @@ a:focus {
     background: rgba(255,255,255,.1);
 }
 
+#request-submit:hover,
+#request-submit:focus,
+#request-submit:active {
+    color: #eee;
+    background-color: #E66000;
+}
+
 @-webkit-keyframes pulse {
     from { -webkit-transform: scale(1); }
     to   { -webkit-transform: scale(1.2); }
@@ -224,4 +234,9 @@ a:focus {
     #brand-wordmark { font-size: 6em; }
     .intro-text { font-size: 1.75em; }
     .content-section { padding: 250px 0; }
+    #request-form .form-group {
+        margin: auto 2px;
+        width: 35%;
+    }
+    #request-form .not-form-group { width: 25%; }
 }
