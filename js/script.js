@@ -1,5 +1,5 @@
 // Configuration parapmeters
-var endPoint = "http://localhost:1337/";
+var endPoint = "http://request-applait.rhcloud.com/";
 
 // Prepare the collapse nav function
 var collapsenav = function() {
