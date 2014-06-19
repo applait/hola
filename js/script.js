@@ -1,5 +1,5 @@
 // Configuration parapmeters
-var endPoint = "http://request-applait.rhcloud.com/";
+var endPoint = "http://instanceof-applaitagora.rhcloud.com/api/apps/create";
 
 // Prepare the collapse nav function
 var collapsenav = function() {
@@ -25,12 +25,13 @@ $(function() {
 });
 
 // Handle app-request with AJAX
-var youGoBoy = function (email, url) {
+var youGoBoy = function (appname, appdescription, url) {
     $.ajax({
         type: "POST",
         url: endPoint,
         data: {
-            email: email,
+            name: appname,
+            description: appdescription,
             url: url
         }
     }).done(function (data) {
@@ -48,9 +49,10 @@ var ohNoes = function () {
 
 $("#request-submit").click( function (event) {
     event.preventDefault();
-    var email = $("#item-email").val();
+    var appname = $("#item-app-name").val();
+    var appdescription = $("#item-app-description").val();
     var url = $("#item-url").val();
-    (email && url) ? youGoBoy(email, url) : ohNoes();
+    (appname && appdescription && url) ? youGoBoy(appname, appdescription, url) : ohNoes();
     return false;
 });
 
@@ -58,5 +60,5 @@ $("#request-submit").click( function (event) {
 $(".request-again").click( function (event) {
     $(this).parent().hide();
     $("#request-form").fadeIn();
-    $("#item-url").select();
+    $("#item-app-name").select();
 });

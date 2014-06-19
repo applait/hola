@@ -144,15 +144,19 @@
                     <p>Put a request here with your current webapp URL and we will get in touch.
                     <form id="request-form" class="form-inline" role="form">
                         <div class="form-group">
-                            <label class="sr-only" for="item-webapp-url">Your webapp URL</label>
-                            <input type="text" class="" id="item-url" placeholder="Webapp URL" name="url">
+                            <label class="sr-only" for="item-app-name">App Name</label>
+                            <input type="text" class="" id="item-app-name" placeholder="App Name" name="name">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only" for="item-email">Your email address</label>
-                            <input type="text" id="item-email" placeholder="Email address" name="email">
+                            <label class="sr-only" for="item-app-description">App Description</label>
+                            <input type="text" class="" id="item-app-description" placeholder="Short app description" name="description">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="item-webapp-url">Webapp URL</label>
+                            <input type="text" class="" id="item-url" placeholder="Webapp URL" name="url">
                         </div>
                         <div class="form-group not-form-group">
-                            <input id="request-submit" class="crossfade" type="submit" value="Request App">
+                            <input id="request-submit" class="crossfade" type="submit" value="Create App">
                         </div>
                     </form>
                     <div id="submission-toast" class="alert alert-warning">
