@@ -40,9 +40,9 @@ var youGoBoy = function (appname, appdescription, url) {
             url: url
         }
     }).done(function (data) {
-        appId = data.message;
-        appurl = apibase + "/apps/" + data.message;
-        manifesturl = apibase + "/api/apps/" + data.message;
+        appId = data.appId;
+        appurl = apibase + "/apps/" + appId;
+        manifesturl = apibase + "/api/apps/" + appId;
         $("#submission-toast").html($("#submission-toast").html()
                 .replace(/\{appurl\}/, appurl)
                 .replace(/\{manifesturl\}/, manifesturl))
