@@ -1,5 +1,10 @@
 // Configuration parapmeters
-var endPoint = "http://instanceof-applaitagora.rhcloud.com/api/apps/create";
+var apibase = "http://instanceof-applaitagora.rhcloud.com",
+    endPoint = apibase + "/api/apps/create",
+    requestbase = "http://request-applait.rhcloud.com",
+    appid,
+    appurl,
+    manifesturl;
 
 // Prepare the collapse nav function
 var collapsenav = function() {
@@ -14,7 +19,7 @@ var collapsenav = function() {
 $(window).scroll(collapsenav);
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
+$(function() {6
     $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
@@ -35,8 +40,36 @@ var youGoBoy = function (appname, appdescription, url) {
             url: url
         }
     }).done(function (data) {
-        $("#submission-toast").fadeIn();
-        $("#request-form").hide();
+        appId = data.message;
+        appurl = apibase + "/apps/" + data.message;
+        manifesturl = apibase + "/api/apps/" + data.message;
+        $("#submission-toast").html($("#submission-toast").html()
+                .replace(/\{appurl\}/, appurl)
+                .replace(/\{manifesturl\}/, manifesturl))
+            .fadeIn();
+        $("#generator-form").remove();
+
+        $("#request-submit").click( function (event) {
+            event.preventDefault();
+            var email = $("#item-email").val().trim();
+            if (email && /\w+\@\w+\.\w+/.test(email)) {
+                $.ajax({
+                    type: "POST",
+                    url: requestbase,
+                    data: {
+                        email: email,
+                        appId: appId
+                    }
+                }).done(function (data) {
+                    $("#request-form").remove();
+                    $("#request-success").removeClass("hidden");
+                });
+            } else {
+                $("#item-email").select();
+            }
+            return false;
+        });
+
     }).fail(function (error) {
         console.log(JSON.stringify(error, null, "  "));
     });
@@ -44,10 +77,10 @@ var youGoBoy = function (appname, appdescription, url) {
 
 var ohNoes = function () {
     $("#failure-toast").fadeIn();
-    $("#request-form").hide();
+    $("#generator-form").hide();
 }
 
-$("#request-submit").click( function (event) {
+$("#generator-submit").click( function (event) {
     event.preventDefault();
     var appname = $("#item-app-name").val();
     var appdescription = $("#item-app-description").val();
@@ -56,9 +89,11 @@ $("#request-submit").click( function (event) {
     return false;
 });
 
+
+
 // Reenable form, for resubmission
 $(".request-again").click( function (event) {
     $(this).parent().hide();
-    $("#request-form").fadeIn();
+    $("#generator-form").fadeIn();
     $("#item-app-name").select();
 });

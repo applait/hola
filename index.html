@@ -54,7 +54,7 @@
 
     <nav class="navbar navbar-fixed-top crossfade" role="navigation">
         <div class="container page-scroll">
-            <a id="request-app-link" class="navbar-button crossfade" href="#request">Request an app</a>
+            <a id="request-app-link" class="navbar-button crossfade" href="#create">Create an app</a>
             <a class="navbar-brand" href="#page-top">applait</a>
         </div>
     </nav>
@@ -81,14 +81,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Get your Firefox OS app for $100&#42;</h2>
-                    <p>If you have a fully-functional, responsive web-app, we will convert it into a Firefox OS app for
-                        just <strong>$100</strong>. That's it. No hidden cost.</p>
+                    <h2>Get your Firefox OS app starting $100&#42;</h2>
+                    <p>If you have a web-app, we will convert it to a pixel-perfect <span class="nobr">Firefox OS</span>
+                        app, with all the necessary magic. It will cost you just a fraction of the cost of setting up
+                        your own development team for <span class="nobr">Firefox OS</span>.</p>
                     </p>
-                    <p>That is just a fraction of what it will cost to set up your own development team for Firefox
-                        OS.</p>
+                    <p class="page-scroll">As a proof-of-concept, you can make a functional prototype of your
+                        current web application with our <a href="#create">app generator tool</a> and test on any
+                        <span class="nobr">Firefox OS</span> device.
                     </p>
-                    <p class="small">&#42; Conditions don't apply.<br>It's not $99.9 or $99.99. <b>It's $100.</b></p>
+                    <p class="small">&#42; It's not $99.9 or $99.99. Our prices start
+                        from <strong>$100</strong>.</p>
                 </div>
             </div>
         </div>
@@ -101,20 +104,11 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>What is Applait?</h2>
                     <p>Applait is a premium service for bringing your applications to
-                     <a href="https://mozilla.org/firefox/os">Firefox OS</a>.</p>
-                    <p>We, at Applait, have deep understanding of technologies behind Firefox OS. We help apps
-                        reach out to Firefox OS markets globally.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="content-section text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Get in touch</h2>
-                    <p>Drop us an email at <a href="mailto:ask@applait.io">ask@applait.io</a></p>
+                     <a href="https://mozilla.org/firefox/os"><span class="nobr">Firefox OS</span></a>.</p>
+                    <p>We, at Applait, have deep understanding of technologies behind <span class="nobr">Firefox OS</span>.
+                        We help apps reach out to Firefox OS markets globally.</p>
+                    <p>For any app related queries, drop us an email at
+                        <a href="mailto:ask@applait.io">ask@applait.io</a>.</p>
                     <div class="row">
                         <div class="col-lg-12">
                             <a href="https://twitter.com/applait" class="btn btn-default btn-lg">
@@ -136,31 +130,48 @@
         </div>
     </section>
 
-    <section id="request" class="content-section">
+    <section id="create" class="content-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h1>Request a Firefox OS app</h1>
-                    <p>Put a request here with your current webapp URL and we will get in touch.
-                    <form id="request-form" class="form-inline" role="form">
-                        <div class="form-group">
-                            <label class="sr-only" for="item-app-name">App Name</label>
-                            <input type="text" class="" id="item-app-name" placeholder="App Name" name="name">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="item-app-description">App Description</label>
-                            <input type="text" class="" id="item-app-description" placeholder="Short app description" name="description">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="item-webapp-url">Webapp URL</label>
-                            <input type="text" class="" id="item-url" placeholder="Webapp URL" name="url">
-                        </div>
-                        <div class="form-group not-form-group">
-                            <input id="request-submit" class="crossfade" type="submit" value="Create App">
+                    <h1 class="text-center">Generate a Firefox OS app</h1>
+
+                    <form id="generator-form" class="form-horizontal" role="form">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="form-group">
+                                <label class="sr-only" for="item-app-name">App Name</label>
+                                <input type="text" class="" id="item-app-name" placeholder="App Name" name="name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="item-app-description">App Description</label>
+                                <input type="text" class="" id="item-app-description" placeholder="Short app description" name="description" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="item-webapp-url">Webapp URL</label>
+                                <input type="text" class="" id="item-url" placeholder="Webapp URL" name="url" required>
+                            </div>
+                            <div class="form-group">
+                                <input id="generator-submit" class="action-button crossfade" type="submit" value="Create App">
+                            </div>
                         </div>
                     </form>
                     <div id="submission-toast" class="alert alert-warning">
-                        Got it... we'll get back to you ASAP. Do you wanna <b class="request-again">request another</b> app?
+                        <p>Yay! We have created an <a href="{appurl}">app for you</a>. You can test drive
+                        this app on any Firefox OS device for the next 7 days.</p>
+                        <p>If you find that your app needs more polish, count on us to help you!</p>
+                        <form id="request-form" class="form-inline" role="form">
+                            <div class="form-group">
+                                <label class="sr-only" for="item-email">Email</label>
+                                <input type="text" id="item-email" placeholder="Email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <input id="request-submit" class="action-button" type="submit" value="Get in touch!">
+                            </div>
+                        </form>
+                        <div id="request-success" class="hidden"><p>We've got it! <em>Thanks!</em></p></div>
+                        <p class="small">Alternatively, you can download your <a href="{manifesturl}">app's <em>manifest</em></a>,
+                             and handcraft it</a>.</p>
                     </div>
                     <div id="failure-toast" class="alert alert-danger">
                         Life is too short to fire blanks... Please <b class="request-again">fill-up the fields</b>!
