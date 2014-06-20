@@ -2,7 +2,7 @@
 var apibase = "http://instanceof-applaitagora.rhcloud.com",
     endPoint = apibase + "/api/apps/create",
     requestbase = "http://request-applait.rhcloud.com",
-    appid,
+    appId,
     appurl,
     manifesturl;
 
@@ -19,7 +19,7 @@ var collapsenav = function() {
 $(window).scroll(collapsenav);
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {6
+$(function() {
     $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
